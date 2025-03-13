@@ -10,17 +10,16 @@ import java.time.format.DateTimeFormatter;
 
 public class Scheduling {
     private String date;
-    private String time;
     private Patient patient;
     private Psychologist psychologist;
 
-    public Scheduling(String date, String time, Patient patient, Psychologist psychologist) {
+    public Scheduling(String date, Patient patient, Psychologist psychologist) {
 
-        if (date == null || time == null || patient == null || psychologist == null) {
+        if (date == null ||  patient == null || psychologist == null) {
             throw new IllegalArgumentException("Scheduling parameters cannot be null");
         }
 
-        if (date.isEmpty() || time.isEmpty()) {
+        if (date.isEmpty() ) {
             throw new IllegalArgumentException("Scheduling parameters cannot be empty");
         }
 
@@ -29,7 +28,6 @@ public class Scheduling {
         }
 
         this.date = date;
-        this.time = time;
         this.patient = patient;
         this.psychologist = psychologist;
     }
@@ -40,14 +38,6 @@ public class Scheduling {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public Patient getPatient() {
