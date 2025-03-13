@@ -1,6 +1,6 @@
 package com.gabipsi.agendamentos.domain.entities.psychologist;
 
-import com.gabipsi.agendamentos.domain.entities.WorkSchedule;
+import com.gabipsi.agendamentos.domain.WorkSchedule;
 
 import java.util.List;
 

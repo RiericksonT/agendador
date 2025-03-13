@@ -1,6 +1,6 @@
 package com.gabipsi.agendamentos.domain.entities.patient;
 
-import com.gabipsi.agendamentos.domain.entities.Address;
+import com.gabipsi.agendamentos.domain.Address;
 
 public class Patient {
     private String name;

@@ -1,4 +1,4 @@
-package com.gabipsi.agendamentos.domain.entities;
+package com.gabipsi.agendamentos.domain;
 
 public class Address {
     private String street;

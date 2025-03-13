@@ -1,5 +1,6 @@
 package com.gabipsi.agendamentos.domain.entities;
 
+import com.gabipsi.agendamentos.domain.WorkSchedule;
 import com.gabipsi.agendamentos.domain.entities.psychologist.Psychologist;
 import com.gabipsi.agendamentos.domain.entities.psychologist.PsychologistFactory;
 import org.junit.jupiter.api.Assertions;
