@@ -1,10 +1,16 @@
-package com.gabipsi.agendamentos.domain.entities.patient;
+package com.gabipsi.agendamentos.infra.persistence.patient;
 
 import com.gabipsi.agendamentos.domain.Address;
+import jakarta.persistence.*;
 
+import javax.annotation.processing.Generated;
 import java.util.UUID;
 
-public class Patient {
+@Entity
+@Table(name = "patient")
+public class PatientEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
     private String cpf;
@@ -12,28 +18,16 @@ public class Patient {
     private String email;
     private Address address;
 
-    public Patient(String name, String cpf, String number, String email) {
+    public PatientEntity() {
+    }
 
-        if (name == null || cpf == null || number == null || email == null) {
-            throw new IllegalArgumentException("Arguments must not be null");
-        }
-
-        if (!cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
-            throw new IllegalArgumentException("CPF does not match the required format");
-        }
-
-        if (!number.matches("\\(\\d{2}\\)\\s9\\d{4}-\\d{4}")) {
-            throw new IllegalArgumentException("Phone number does not match the required format");
-        }
-
-        if (!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
-            throw new IllegalArgumentException("Email does not match the required format");
-        }
-
+    public PatientEntity(UUID id, String name, String cpf, String number, String email, Address address) {
+        this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.number = number;
         this.email = email;
+        this.address = address;
     }
 
     public UUID getId() {

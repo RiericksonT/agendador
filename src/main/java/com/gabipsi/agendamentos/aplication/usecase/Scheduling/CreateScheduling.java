@@ -20,17 +20,15 @@ public class CreateScheduling {
     }
 
     public Scheduling createScheduling(Scheduling scheduling){
-        Scheduling schedulingExistente = schedulingInterface.getSchedulingByPatientCPF(scheduling.getPatient().getCpf());
-        if (schedulingExistente != null){
+        Scheduling schedulingExists = schedulingInterface.getSchedulingByPatientCPF(scheduling.getPatient().getCpf());
+        if (schedulingExists != null){
             throw new DuplicateKeyException("This schedule already exists");
         }
 
         Patient patient = getPatient.getPatientByCPF(scheduling.getPatient().getCpf());
-        if (patient != null){
-            return schedulingInterface.createScheduling(scheduling);
-        }else {
-            Patient patientCriado = createPatient.createPatient(scheduling.getPatient());
-            return schedulingInterface.createScheduling(scheduling);
+        if (patient == null) {
+            Patient patientCreated = createPatient.createPatient(scheduling.getPatient());
         }
+        return schedulingInterface.createScheduling(scheduling);
     }
 }

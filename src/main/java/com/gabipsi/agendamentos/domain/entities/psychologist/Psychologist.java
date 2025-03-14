@@ -3,8 +3,10 @@ package com.gabipsi.agendamentos.domain.entities.psychologist;
 import com.gabipsi.agendamentos.domain.WorkSchedule;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Psychologist {
+    private UUID id;
     private String name;
     private String crp;
     private String email;
@@ -37,6 +39,14 @@ public class Psychologist {
         this.crp = crp;
         this.email = email;
         this.phone = phone;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {
