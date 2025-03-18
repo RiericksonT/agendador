@@ -2,28 +2,26 @@ package com.gabipsi.agendamentos.domain.entities.psychologist;
 
 import com.gabipsi.agendamentos.domain.WorkSchedule;
 
-import java.util.List;
+import java.util.HashSet;
 
 public class PsychologistFactory {
     private Psychologist psychologist;
 
-    public Psychologist createPsychologist(String name, String cpf, String number, String email) {
-        this.psychologist = new Psychologist(name, cpf, number, email);
+    public Psychologist createPsychologist(String name, String crp, String phone, String email) {
+        this.psychologist = new Psychologist(name, crp, phone, email);
         return this.psychologist;
     }
 
-    public Psychologist createPsychologistWithWorkSchedule(List<WorkSchedule> workScheduleList) {
+    public void createPsychologistWithWorkSchedule(HashSet<WorkSchedule> workScheduleList) {
         this.psychologist.setWorkSchedules(
                 workScheduleList
         );
-        return this.psychologist;
     }
 
-    public Psychologist createPsychologistWithWorkScheduleAndPassword(List<WorkSchedule> workScheduleList, String password) {
+    public void createPsychologistWithWorkScheduleAndPassword(HashSet<WorkSchedule> workScheduleList, String password) {
         this.psychologist.setWorkSchedules(
                 workScheduleList
         );
         this.psychologist.setPassword(password);
-        return this.psychologist;
     }
 }

@@ -1,37 +1,64 @@
 package com.gabipsi.agendamentos.domain;
 
+import com.gabipsi.agendamentos.domain.entities.psychologist.Psychologist;
+
+import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 public class WorkSchedule {
-    private String day;
-    private String start;
-    private String end;
+    private UUID id;
+    private String dayOfWeek;
+    private LocalTime startTime;
+    private LocalTime endTime;
+    private HashSet<Psychologist> psychologists = new HashSet<>();
 
-    public WorkSchedule(String day, String start, String end) {
-        this.day = day;
-        this.start = start;
-        this.end = end;
+    public WorkSchedule(UUID id, String dayOfWeek, LocalTime startTime, LocalTime endTime, HashSet<Psychologist> psychologists) {
+        this.id = id;
+        this.dayOfWeek = dayOfWeek;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.psychologists = psychologists;
     }
 
-    public String getDay() {
-        return day;
+    public UUID getId() {
+        return id;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
-    public String getStart() {
-        return start;
+    public String getDayOfWeek() {
+        return dayOfWeek;
     }
 
-    public void setStart(String start) {
-        this.start = start;
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 
-    public String getEnd() {
-        return end;
+    public LocalTime getStartTime() {
+        return startTime;
     }
 
-    public void setEnd(String end) {
-        this.end = end;
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public Set<Psychologist> getPsychologists() {
+        return psychologists;
+    }
+
+    public void setPsychologists(HashSet<Psychologist> psychologists) {
+        this.psychologists = psychologists;
     }
 }

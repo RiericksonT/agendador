@@ -7,5 +7,6 @@ import java.util.UUID;
 
 public interface SchedulingRepositoryJpa extends JpaRepository<SchedulingEntity, Long> {
     SchedulingEntity findById(UUID id);
-    SchedulingEntity findByPatientCpf(String cpf);
+    SchedulingEntity findByPatient_Cpf(String cpf);
+    SchedulingEntity findByPsychologist_Crp(String crp);
 }

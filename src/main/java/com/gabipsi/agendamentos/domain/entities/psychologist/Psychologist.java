@@ -2,7 +2,7 @@ package com.gabipsi.agendamentos.domain.entities.psychologist;
 
 import com.gabipsi.agendamentos.domain.WorkSchedule;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.UUID;
 
 public class Psychologist {
@@ -11,7 +11,7 @@ public class Psychologist {
     private String crp;
     private String email;
     private String phone;
-    private List<WorkSchedule> workSchedules;
+    private HashSet<WorkSchedule> workSchedules;
     private String password;
 
     public Psychologist() {
@@ -81,11 +81,11 @@ public class Psychologist {
         this.phone = phone;
     }
 
-    public List<WorkSchedule> getWorkSchedules() {
+    public HashSet<WorkSchedule> getWorkSchedules() {
         return workSchedules;
     }
 
-    public void setWorkSchedules(List<WorkSchedule> workSchedules) {
+    public void setWorkSchedules(HashSet<WorkSchedule> workSchedules) {
         this.workSchedules = workSchedules;
     }
 
